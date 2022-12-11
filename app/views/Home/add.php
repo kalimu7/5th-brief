@@ -11,8 +11,14 @@
 </head>
 <body>
     <div class="container">
-        <form action="http://localhost/5th%20BRIEF/public/product/addProduct" method="POST" class="mx-auto" style="width:400px;">
-            <h1>add product</h1>
+        <form action="http://localhost:8080/5th-brief/public/product/addProduct" method="POST" enctype="multipart/form-data" class="mx-auto" style="width:400px;">
+            <h1>add new destination</h1>
+           
+            <?php
+             if(isset($data['msg'])){
+                echo $data['msg'];     
+            }
+             ?> 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">destination</label>
                 <input type="text" name="dest" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -24,6 +30,10 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">price</label>
                 <input type="text" name="price" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">choose the picture of your destination</label>
+                <input type="file" name="image" class="form-control" id="exampleInputPassword1">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Add Your new Destination</button>
         </form>

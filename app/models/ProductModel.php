@@ -8,13 +8,9 @@
         public $description;
         // public $image;
 
-        public function insert($destination,$description,$price){
-            $check = mysqli_query($this->connect(),"INSERT INTO `travel` (`id`, `destination`, `price`, `description`, `image`) VALUES (NULL, '$destination', '$description', '$price', '')");
-            if($check){
-                return true;
-            }else{
-                return false;
-            }
+        public function insert($destination,$description,$price,$image){
+            $check = mysqli_query($this->connect(),"INSERT INTO `travel` (`id`, `destination`, `price`, `description`, `image`) VALUES (NULL, '$destination', '$description', '$price', '$image')");
+            
         }
     }
     
